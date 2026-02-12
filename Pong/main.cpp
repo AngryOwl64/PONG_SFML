@@ -1,8 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <random>
-//farbiger score für looser und winner
-//player werden zurückgesetzt
+//farbiger score fÃ¼r looser und winner
 //menu machen + main eigene methode
 void shuffle(float &ballMoveX, float &ballMoveY, std::mt19937 &gen) {
 	std::uniform_real_distribution<float>dist(-5.0f, 5.0f);
