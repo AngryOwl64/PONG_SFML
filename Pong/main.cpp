@@ -84,14 +84,14 @@ int main() {
 	sf::FloatRect textRect;
 	sf::Text scorePlayer1(font);
 	scorePlayer1.setString(std::to_string(score1));
-	scorePlayer1.setCharacterSize(30);
+	scorePlayer1.setCharacterSize(45);
 	textRect = scorePlayer1.getLocalBounds();
 	scorePlayer1.setOrigin(textRect.getCenter());
 	scorePlayer1.setPosition({30.0f, 30.0f});
 
 	sf::Text scorePlayer2(font);
 	scorePlayer2.setString(std::to_string(score2));
-	scorePlayer2.setCharacterSize(30);
+	scorePlayer2.setCharacterSize(45);
 	textRect = scorePlayer2.getLocalBounds();
 	scorePlayer2.setOrigin(textRect.getCenter());
 	scorePlayer2.setPosition({ width - 30.0f, 30.0f });
