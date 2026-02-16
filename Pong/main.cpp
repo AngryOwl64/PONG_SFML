@@ -1,7 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <random>
-//farbiger score für looser und winner
 //menu machen + main eigene methode
 void shuffle(float &ballMoveX, float &ballMoveY, std::mt19937 &gen) {
 	std::uniform_real_distribution<float>dist(-600.0f, 600.0f);
@@ -171,17 +170,27 @@ int main() {
 			player2.setPosition({ 1880.0f, 540.0f });
 			ball.setPosition({ 960.0f, 540.0f });
 			shuffle(ballMoveX, ballMoveY, gen);
+			if (score1 == score2) {
+				scorePlayer1.setFillColor(sf::Color::White);
+				scorePlayer2.setFillColor(sf::Color::White);
+			} else if (score1 > score2) {
+				scorePlayer1.setFillColor(sf::Color::Green);
+				scorePlayer2.setFillColor(sf::Color::Red);
+			} else if (score1 < score2) {
+				scorePlayer1.setFillColor(sf::Color::Red);
+				scorePlayer2.setFillColor(sf::Color::Green);
+			}
 		}
 
 		window->clear(sf::Color::Black);
-
-		window->draw(scorePlayer1);
-		window->draw(scorePlayer2);
 
 		window->draw(player1);
 		window->draw(player2);
 		
 		window->draw(ball);
+
+		window->draw(scorePlayer1);
+		window->draw(scorePlayer2);
 		
 		window->draw(borderDown);
 		window->draw(borderUp);
